@@ -41,6 +41,7 @@ import { createSplashWindow } from "./splash";
 import { makeLinksOpenExternally } from "./utils/makeLinksOpenExternally";
 import { applyDeckKeyboardFix, askToApplySteamLayout, isDeckGameMode } from "./utils/steamOS";
 import { downloadVencordFiles, ensureVencordFiles } from "./utils/vencordLoader";
+import { initVimMode } from "./vimMode";
 
 let isQuitting = false;
 let tray: Tray;
@@ -452,6 +453,7 @@ function createMainWindow() {
     makeLinksOpenExternally(win);
     initSettingsListeners(win);
     initSpellCheck(win);
+    initVimMode(win);
 
     win.webContents.setUserAgent(BrowserUserAgent);
 
